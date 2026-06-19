@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>leegle-gpt-image-downloader</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">leegle-gpt-image-downloader · v0.0.15</div>
+        <h1>leegle-gpt-image-downloader</h1>
+        <p>打开插件后会自动采集当前屏幕可见图片组；ZIP 名称固定为 leegle-gpt-image_时间，内部文件夹和图片名均使用英文安全格式，避免乱码。</p>
+      </div>
+      <div class="hero-actions">
+        <button id="fitWindowBtn" class="icon-btn" title="重新贴合浏览器高度">贴边全高</button>
+        <button id="refreshBtn" class="icon-btn" title="刷新列表">↻</button>
+      </div>
+    </header>
+
+    <section class="toolbar main-toolbar">
+      <button id="scanConversationBtn" class="strong">扫描当前会话图片组</button>
+      <button id="captureVisibleBtn" class="strong alt">重新采集当前可见高清组</button>
+      <button id="previewVisibleBtn" class="strong purple">查看当前组高清图</button>
+      <button id="captureSelectedBtn">采集选中组高清原图</button>
+      <button id="selectAllGroupsBtn">选全部组</button>
+      <button id="clearBtn" class="ghost">清空</button>
+      <button id="legacyScanBtn" class="ghost">普通扫描备用</button>
+    </section>
+
+    <section class="summary">
+      <span id="scanStatus">未扫描</span>
+      <span id="selectedStatus">已选 0 组 / 已采集 0 张</span>
+    </section>
+
+    <section class="filename-box">
+      <label for="zipNameInput">ZIP 文件名（固定英文安全格式）</label>
+      <input id="zipNameInput" type="text" placeholder="gpt-conversation-images.zip" />
+    </section>
+
+    <section id="groupList" class="group-list"></section>
+
+    <section class="download-panel">
+      <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+      <div id="progressText" class="progress-text">等待操作</div>
+      <button id="downloadBtn" class="primary">直接下载已采集高清 ZIP</button>
+    </section>
+
+    <footer>
+      <p>推荐：先把需要的图片组滚到屏幕中间，点「重新采集当前可见高清组」。要下载整段会话中多组图片，先点「扫描当前会话图片组」，勾选组，再点「采集选中组高清原图」。</p>
+    </footer>
+  </main>
+
+
+    <section id="hdModal" class="hd-modal hidden" aria-hidden="true">
+      <div class="hd-backdrop" id="hdBackdrop"></div>
+      <div class="hd-viewer" role="dialog" aria-label="高清原图预览">
+        <div class="hd-toolbar">
+          <div>
+            <div id="hdTitle" class="hd-title">高清原图预览</div>
+            <div id="hdMeta" class="hd-meta">等待加载</div>
+          </div>
+          <div class="hd-actions">
+            <button id="hdOpenTabBtn" class="ghost">新标签打开</button>
+            <button id="hdAddBtn" class="ghost">加入下载</button>
+            <button id="hdCloseBtn" class="icon-btn">关闭</button>
+          </div>
+        </div>
+        <div class="hd-image-wrap">
+          <img id="hdImage" alt="高清原图预览" />
+        </div>
+      </div>
+    </section>
+  <script src="zipStore.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
