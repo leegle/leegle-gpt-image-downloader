@@ -1,0 +1,39 @@
+# 操作系统
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (若后续添加构建脚本)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 构建产物
+dist/
+build/
+out/
+*.zip
+*.crx
+*.xpi
+
+# 日志
+*.log
+logs/
+
+# 本地私有配置（敏感信息、密钥等）
+.env
+.env.local
+.env.*.local
+config.local.json
+*.local.js

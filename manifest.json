@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "leegle-gpt-image-downloader",
   "short_name": "leegle-gpt-image-downloader",
-  "version": "0.0.15",
-  "description": "Auto-captures visible ChatGPT generated image groups in high resolution and downloads them as ZIP with ASCII-safe file and folder names.",
+  "version": "0.0.18",
+  "description": "Batch download ChatGPT generated images as high-resolution ZIP files. Includes Chinese/English UI and bilingual installation guides. Local-only, no upload.",
   "permissions": [
     "activeTab",
     "scripting",

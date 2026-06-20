@@ -79,3 +79,11 @@ footer { flex: 0 0 auto; font-size: 12px; padding: 0 4px; }
 @media (max-width: 1100px) { .toolbar { grid-template-columns: repeat(4, minmax(120px, 1fr)); } }
 .main-toolbar { grid-template-columns: repeat(7, minmax(108px, 1fr)); }
 @media (max-width: 1180px) { .main-toolbar { grid-template-columns: repeat(4, minmax(120px, 1fr)); } }
+
+.lang-btn {
+  min-width: 54px;
+  background: #1d1d1f;
+  color: #fff;
+  border-color: #1d1d1f;
+}
+.lang-btn:hover { border-color: rgba(29,29,31,.45); }

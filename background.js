@@ -1,4 +1,4 @@
-const VERSION = '0.0.15';
+const VERSION = '0.0.18';
 let panelWindowId = null;
 
 function clamp(value, min, max) {

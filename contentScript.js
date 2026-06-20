@@ -2,7 +2,7 @@
   if (window.__leegleGptImageZipReadyV0012) return;
   window.__leegleGptImageZipReadyV0012 = true;
 
-  const VERSION = '0.0.15';
+  const VERSION = '0.0.18';
   const groupCache = new Map();
 
   function sleep(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
